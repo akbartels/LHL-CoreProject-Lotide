@@ -40,3 +40,4 @@ const middle = function(array) {
 let arrayTest = [1, "b", "c", 4, 5];
 
 assertArraysEqual(middle(arrayTest), ["c"])
+
