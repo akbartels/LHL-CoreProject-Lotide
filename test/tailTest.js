@@ -1,22 +1,17 @@
-const assertEqual = require("../assertEqual");
+const assert = require('chai').assert
 const tail = require("../tail.js");
 
-assertEqual("Lighthouse Labs", "Bootcamp"); // --> fail
-assertEqual(1, 1);
-assertEqual(1, 6); // --> fail
-assertEqual("amy", "amy");
-
-console.log("-------")
-
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2);
-assertEqual(result[0], "Lighthouse");
-assertEqual(result[1], "Labs");
-assertEqual(result[1], "Labs");
-assertEqual(result[1], "Lighthouse"); // --> fail
-
-console.log("-------")
-
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-console.log((tail(words)));
-assertEqual(words.length, 3);
+describe("#tail", () => {
+  it("returns ['Lighthouse', 'Labs'] given ['Hello', 'Lighthouse', 'Labs'", () => {
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"])
+  });
+  it("returns [2, 'c', 'd'] given [1, 2, 'c', 'd']", () => {
+    assert.deepEqual(tail([1, 2, 'c', 'd']), [2, 'c', 'd'])
+  });
+  it("returns [2, 3, 4] given [1, 2, 3, 4]", () => {
+    assert.deepEqual(tail([1, 2, 3, 4]), [2, 3, 4])
+  });
+  it("returns 3 given tail([1, 2, 3, 4]).length", () => {
+    assert.deepEqual(tail([1, 2, 3, 4]).length, 3)
+  });
+});
