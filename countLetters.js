@@ -1,4 +1,4 @@
-const assertEqual = require('./assertEqual');
+
 
 // take in a string
 // return a count of each of the letters in string
@@ -21,10 +21,4 @@ const countLetters = function(string) {
 };
 
 
-
-let testString = "My name is Amy";
-
-
-assertEqual(countLetters(testString)['m'], 3);
-assertEqual(countLetters(testString)['a'], 2);
-assertEqual(countLetters(testString)['i'], 1);
+module.exports = countLetters;
